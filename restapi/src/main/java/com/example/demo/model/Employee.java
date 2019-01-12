@@ -2,47 +2,22 @@ package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NonNull;
+
+@AllArgsConstructor
+@Getter
 public class Employee {
 	@JsonProperty
-	private Integer id;
-	
+	private @NonNull String id;
+
 	@JsonProperty
 	private String firstName;
-	
+
 	@JsonProperty
 	private String lastName;
-	
+
 	@JsonProperty
-	private String email;
-	
-	public Employee() {
-
-	}
-	public Employee(Integer id, String firstName, String lastName, String email) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
-
-	//getters and setters
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", email=" + email + "]";
-	}
-	public Integer getId() {
-		return id;
-	}
-	public String getFirstName() {
-		return firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public String getEmail() {
-		return email;
-	}
+	private @NonNull String email;
 }
