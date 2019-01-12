@@ -21,33 +21,33 @@ public class EmployeeController
 	public List<Employee> getEmployees()
 	{
 		List<Employee> employeesList = new ArrayList<Employee>();
-		employeesList.add(new Employee(1,"lokesh","gupta","test@gmail.com"));
+		employeesList.add(new Employee("1","ankit","gupta","test@gmail.com"));
 		return employeesList;
 	}
 	
 	@GetMapping("/employee/{id}")
-	public Employee getEmployee(@PathVariable Integer id)
+	public Employee getEmployee(@PathVariable String id)
 	{
-		Employee emp = new Employee(id,"lokesh","gupta","test@gmail.com");
+		Employee emp = new Employee(id, "ankit","gupta","test@gmail.com");
 		return emp;
 	}
 	
 	@PutMapping("/employee/{id}")
-	public Employee updateEmployee(@RequestBody Employee newEmployee, @PathVariable Integer id)
+	public Employee updateEmployee(@RequestBody Employee newEmployee, @PathVariable String id)
 	{
 		Employee emp = newEmployee;
 		return emp;
 	}
 	
 	@DeleteMapping(value = "/employee/{id}", produces = "application/json; charset=utf-8")
-	public String deleteEmployee(@PathVariable Long id) {
+	public String deleteEmployee(@PathVariable String id) {
 		return "{ \"success\" : true }";
 	}
 	
 	@PostMapping("/employee")
 	public Employee addEmployee(@RequestBody Employee newEmployee)
 	{
-		Integer id = new Random().nextInt();
+		String id = String.valueOf(new Random().nextInt());
 		Employee emp = new Employee(id, newEmployee.getFirstName(), newEmployee.getLastName(), newEmployee.getEmail());
 		return emp;
 	}
