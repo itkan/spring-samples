@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "ceda5e92-735e-4128-ac97-a1feb812b830",
+		"name": "spring-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8082/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employee by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8082/employee/729280953",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employee",
+						"729280953"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update employee by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"729280953\",\n    \"firstName\": \"ankit\",\n    \"lastName\": \"gupta\",\n    \"email\": \"testankit@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/employee/729280953",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employee",
+						"729280953"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete employee by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8082/employee/980694165",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employee",
+						"980694165"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"firstName\": \"loasd\",\n    \"lastName\": \"gupasd1\",\n    \"email\": \"test@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
